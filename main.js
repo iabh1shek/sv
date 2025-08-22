@@ -1,8 +1,8 @@
 
 
-function sum(num1, num2 ) {
+function sum(num1, num2, fntocall ) {
     const result = num1 + num2 ;    
-    fntocall(result);  
+    fntocall(result)
 }
 
 
@@ -17,3 +17,4 @@ function resultPassive(data) {
 // You are only allowed to call one function after this
 // How will you displayResult of a sum
 
+const ans = sum(1,2, displayResult)
