@@ -1,5 +1,3 @@
-
-
 function sum(num1, num2, fntocall ) {
     const result = num1 + num2 ;    
     fntocall(result)

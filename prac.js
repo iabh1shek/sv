@@ -19,4 +19,4 @@ const ans = sumandsub(1,2,'sum', displayresult)
 
 
 
-// setTimeout (logic, interval)
+

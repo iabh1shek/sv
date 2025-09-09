@@ -7,3 +7,4 @@ for(let i = 0; i < ages.length; i++){
         console.log(ages[i] + 'not even')
     }
 }
+
