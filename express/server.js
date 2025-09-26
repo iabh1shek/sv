@@ -9,7 +9,9 @@ function calculateSum(n) {
     return ans; 
 }
 
-
+app.post()
+app.put()
+app.delete()
 
 app.get('/', function (req,res) { 
     // logic 
