@@ -2,7 +2,6 @@ const express = require('express')
 const app = express(); 
 
 app.use(express.json()); 
-
 const users = [{
     username: "abhishek",
     trees: [{
@@ -65,6 +64,7 @@ app.put ("/", function(req,res) {
 
 app.delete("/",function(req,res){ 
     // remove healthy trees 
+    
     const newtrees = [] 
     for(let i =0; i < users[0].trees.length; i++){ 
         if(users[0].trees[i].healthy) { 
@@ -82,7 +82,7 @@ app.delete("/",function(req,res){
     res.json({ 
         msg:  " done "
     })
-})
+})      
 
 
 app.listen(3000,function(req,res) { 
