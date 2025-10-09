@@ -14,6 +14,7 @@ function userMiddleware(req, res, next) {
 	}
 }
 
+
 function kidneyMiddleware(req, res, next) {
 	const kidneyId = req.query.kidneyId;
 	if (kidneyId != 1 && kidneyId != 2) {
