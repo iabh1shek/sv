@@ -12,8 +12,8 @@ function calculateSum(n) {
 app.post()
 app.put()
 app.delete()
-
-app.get('/', function (req,res) { 
+// route : - localhost:3000/sum
+app.get('/sum', function (req,res) { 
     // logic 
     const n = req.query.n; 
     const ans = calculateSum(n) ; 
