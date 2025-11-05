@@ -6,13 +6,14 @@ const app = express() ;
 app.use(express.json()) ; 
 
 
-mongoose.connect('db_url'); 
+mongoose.connect(''); 
 
 const User = mongoose.model("User", {
     name: String, 
     username : String,
     password: String 
 }) 
+
 
 
 // input validation zod library---> (security enhance of our backend)
