@@ -1,0 +1,14 @@
+<html>
+    <script>
+        function onButtonPress() { 
+            const currentvalue = document.getElementById('btn').innerHTML;
+            const currentCounter = currentvalue.split(" ")[1]; 
+            const newCounter = parseInt(currentCounter) + 1; 
+            document.getElementById('btn').innerHTML = "counter " + newCounter;
+        }
+    </script>
+
+    <body>
+        <button onclick="onButtonPress()" id="btn">counter 0</button>
+    </body>
+</html>
