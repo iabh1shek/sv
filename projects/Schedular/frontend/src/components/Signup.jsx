@@ -6,10 +6,12 @@ function Signup() {
     const [password, setPassword] = useState('')   
     
 
-    function handleSubmit(){ 
+    function handleSubmit(event){ 
+        event.preventDefault()
 
+        
     }
-
+    
   return (
     <div>
         <h2>Sign Up</h2>
