@@ -1,11 +1,29 @@
 import React from 'react'
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios'
 function Signin() {
     const [username, setUsername]=useState(""); 
     const[password, setPassword] = useState("");
-    
-    function handlesignin() { 
-        
+    const navigate = useNavigate(); 
+    async function handlesignin(event) { 
+        event.preventDefault()
+
+        try {
+            const response = await axios.post('http://localhost:3000/api/v1/user/signin', {username, password})
+
+
+            if(response.status === 200) { 
+                const token = response.data.token; 
+                localStorage.setItem('token', token); 
+                console.log("signin successfull")
+
+                navigate('/dashboard')
+
+            } 
+        } catch (error) {
+            console.log(error.message) 
+        }
     }
   return (
     <div>
@@ -23,7 +41,7 @@ function Signin() {
 
             <div>
                 <label>password:</label>
-                <input type='text' 
+                <input type='password' 
                 value={password} 
                 onChange={(e)=>setPassword(e.target.value)}
                 placeholder='Enter your password' 
