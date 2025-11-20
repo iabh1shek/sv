@@ -5,14 +5,18 @@ import dotenv from 'dotenv'
 import { userModel } from '../db.js'
 dotenv.config() 
 
-const userRouter = express.Router(); 
+const userRouter = express.Router();
 
 // schema validation 
 const signupschema = zod.object({
     username: zod.string(),
     password: zod.string(),
-    email: zod.string().email()
+    email: zod.email()
+
 })
+
+
+
 userRouter.post('/signup', async (req, res) => {
     // logic for signup route
     const {success} =signupschema.safeParse(req.body)
@@ -23,7 +27,7 @@ userRouter.post('/signup', async (req, res) => {
         })
     }
 
-
+    // if user exists or not . 
     const existingUser = await userModel.findOne({
         email: req.body.email
     })
@@ -59,6 +63,7 @@ const signinschema = zod.object({
     password: zod.string()
 })
 
+
 userRouter.post('/signin', async (req,res)=>{ 
     const {success} = signinschema.safeParse(req.body) ; 
     if(!success) { 
@@ -74,7 +79,7 @@ userRouter.post('/signin', async (req,res)=>{
     }) 
     if(!existinguser) { 
         res.status(400).json({ 
-            message: "user doesn't exist please signup"
+            message: "check you username or password"
         })
     }
 

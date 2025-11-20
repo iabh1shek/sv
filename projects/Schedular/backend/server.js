@@ -14,7 +14,7 @@ const port = 3000;
 // app.use('/api/v1', verifyRouter) 
 
 // user routes 
-app.use('/api/v1/user', userRouter)
+app.use('/api/v1/user', userRouter)  
 
 // todo Routes 
 app.use('/api/v1', todoRouter)
