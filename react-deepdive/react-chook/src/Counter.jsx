@@ -10,8 +10,6 @@ return (
         <h2>Custom Hook </h2>
         <h1>{count}</h1>
 
-
-
         <button onClick={increment}>increment</button>
         <button onClick={decrement}> decrement </button>
         <button onClick={reset}>Reset</button>
